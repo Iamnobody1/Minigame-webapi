@@ -31,14 +31,14 @@ public class MapsController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPut("{mapId}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Put([FromRoute] int id, [FromBody] MapModel mapMonster)
     {
         await _mapService.Update(id, mapMonster);
         return Ok();
     }
 
-    [HttpDelete("{mapId}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         await _mapService.Delete(id);
